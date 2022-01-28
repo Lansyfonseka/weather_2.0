@@ -11,11 +11,16 @@
     <header class="header">
       <section class="switchers">
         <button class="reload-image"></button>
-        <select name="language" id="language">
-          <option value="eng">eng</option>
-          <option value="rus">rus</option>
-          <option value="blr">blr</option>
-        </select>
+        <div class="language-select">
+          <div class="language-select__header">
+            <p data-language='eng'>belorussian</p>
+          </div>
+          <div class="language-select__body">
+            <p data-language='eng'>english</p>
+            <p data-language='eng'>russian</p>
+            <p data-language='eng'>belorussian</p>
+          </div>
+        </div>        
         <section class="temperature__switch">
           <button class="temperature celsius">°C</button>
           <button class="temperature fahrenheit">°F</button>

@@ -1,0 +1,66 @@
+.language-select {
+  margin: 0 20px;
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff30;
+  backdrop-filter: blur(2px) contrast(0.8);
+  border-radius: 10px;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    margin: 0 10px;
+    width: 20px;
+    height: 40px;
+    background-image: url('../../../assets/icons/arrow.svg');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 200ms ease-in-out;
+  }
+
+  &__body {
+    // display: none;
+    position: absolute;
+    margin: 0;
+    left: 0;
+    top: 100%;    
+    padding: 0 10px;
+    width: 100%;
+    background-color: #ffffff30;
+    backdrop-filter: blur(2px) contrast(0.8);
+    border-radius: 10px;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    pointer-events: none;
+    p {      
+      margin: 0;
+      transition: 200ms ease-in-out;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &:hover {
+    background-color: #ffffff70;
+  }
+}
+
+.active {
+  &::after {
+    transform: rotate(180deg);
+  }
+  .language-select__body {
+    // display: block;
+    opacity: 1;   
+    margin-top: 10px;
+    pointer-events: all;     
+    p {      
+      margin: 10px 0;
+      transition: 200ms ease-in-out;
+    }
+  } 
+}

@@ -2,6 +2,11 @@
 @import './fonts.scss';
 @import './header.scss';
 
+body {
+  padding-top: 20px;
+  background: url(https://images.pexels.com/photos/1424337/pexels-photo-1424337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 0% 0% / cover no-repeat;
+}
+
 .app {
   font-family: 'Prometo';
 }

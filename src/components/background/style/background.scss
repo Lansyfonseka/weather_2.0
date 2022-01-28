@@ -1,0 +1,17 @@
+.reload-image {
+  width: 40px;
+  height: 40px;
+  background-image: url('../../../assets/icons/return.svg');
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffffff30;
+  backdrop-filter: blur(2px) contrast(0.8);
+  border-radius: 10px;
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    background-color: #ffffff70;
+    transition: 200ms ease-in-out;
+  }
+}
