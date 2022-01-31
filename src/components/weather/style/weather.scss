@@ -1,0 +1,9 @@
+.weather {
+  margin: 50px auto;
+  width: 400px;
+  height: 400px;
+  background-color: #ffffff30;
+  backdrop-filter: blur(2px) contrast(0.8);
+  border-radius: 10px;
+  transition: 200ms ease-in-out;
+}

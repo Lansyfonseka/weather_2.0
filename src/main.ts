@@ -1,9 +1,9 @@
 import './scss/main.scss'
-import './components/header/header'
-import './components/language/language'
-import './components/temperature/temperature'
-import './components/search/search'
+import app from './components/app/app'
 
-const word:string = 'Hello World!'
+const appInit = () => {
+  app.init();
+  document.removeEventListener('DOMContentLoaded', appInit);
+};
 
-console.log(word)
+window.addEventListener('DOMContentLoaded', appInit);
