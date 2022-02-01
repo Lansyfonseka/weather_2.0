@@ -1,6 +1,7 @@
 @import './normalize.scss';
 @import './fonts.scss';
 @import './header.scss';
+@import './yandex-map.scss';
 
 body {
   padding-top: 20px;
@@ -12,4 +13,8 @@ body {
   max-width: 1024px;
   margin: auto;
   font-family: 'Prometo';
+  .main {
+    margin-top: 50px;
+    display: flex;
+  }
 }
