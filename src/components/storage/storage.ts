@@ -5,6 +5,7 @@ import LocationInfo from "../../services/models/services.model";
 class Storage {
   weatherToday:Object;
   loactionInfo: LocationInfo;
+  myMap: {searchLocation:Function}
   constructor () {
     this.weatherToday = {};
   }
