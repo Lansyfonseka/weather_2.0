@@ -11,7 +11,7 @@ class Storage {
   }
   async init () {
     this.loactionInfo = await getUserLoaction();
-    // getWeather(this.loactionInfo.location.latitude,this.loactionInfo.location.longitude)
+    getWeather(this.loactionInfo.location.latitude,this.loactionInfo.location.longitude)
   }
 }
 
