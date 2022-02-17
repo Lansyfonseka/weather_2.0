@@ -16,7 +16,7 @@ class App {
     // this.entryPoint.innerHTML = Header.render();
     // document.body.appendChild(this.entryPoint);
     // document.querySelector('main').appendChild(weather.render());
-    weather.render()
+    weather.render();
     // const lat = 54.9102;
     // const lan = 26.708;
     // await initYandexMap(lat,lan)
@@ -24,6 +24,7 @@ class App {
     // await initYandexMap(latitude,longitude);
 
     search.init();
+    document.querySelector('.app').appendChild(spinner.render());
     spinner.hide();
   }
 }

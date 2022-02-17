@@ -13,7 +13,7 @@ class Spinner {
     this.body.appendChild(water)
   }
   show() {
-    this.body.style.display = 'block';
+    this.body.style.display = 'flex';
   }
   hide() {
     this.body.style.display = 'none';

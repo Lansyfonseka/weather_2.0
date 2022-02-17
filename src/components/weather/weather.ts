@@ -8,7 +8,7 @@ class Weather {
     this.frame = document.createElement('div');
     this.frame.classList.add('weather');
 
-    this.frame.appendChild(spiner.render())
+    // this.frame.appendChild(spiner.render());
   }
   render() {
     return this.frame;

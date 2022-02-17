@@ -1,20 +1,21 @@
 @import './normalize.scss';
 @import './fonts.scss';
 @import './yandex-map.scss';
+@import './variables.scss';
 
 body {
-  padding-top: 20px;
-  background: url(https://images.pexels.com/photos/1424337/pexels-photo-1424337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 0% 0% / cover no-repeat;
+  background: url(https://images.pexels.com/photos/1424337/pexels-photo-1424337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-position: center;
 }
 
 .app {
+  position: relative;
   width: 90%;
   max-width: 1024px;
-  margin: auto;
-  font-family: 'Prometo';
-  font-style: italic;
+  margin: 20px auto 0;
+  font-family: $app-font-family;
   .main {
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
   }

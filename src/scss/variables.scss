@@ -1,0 +1,32 @@
+//Fonts
+$app-font-family: 'Prometo', sans-serif;  //Only english
+$app-font-style-italic: italic;
+$app-font-style-normal: normal;
+
+//Font sizes
+$app-font-size-large: 40px;
+$app-font-size-medium: 24px;
+$app-font-size-small: 16px;
+
+//Border
+$app-base-border-radius: 10px;
+
+//Margin and padding
+$app-base-margin-padding: 10px;
+
+//Color
+$app-base-background-color: #ffffff30;
+$app-base-background-color-hover: #ffffff70;
+
+//Filter
+$app-base-filter: blur(2px) contrast(0.8);
+
+//Shadow
+$app-base-box-shadow-normal: 4px 4px 10px 3px #00000061;
+$app-base-box-shadow-low: 4px 4px 10px 0px #00000061;
+
+//Animation
+$app-base-animation: 200ms ease-in-out;
+
+//Viewport breakpoint
+$app-viewport-breakpoint-small: 620px;

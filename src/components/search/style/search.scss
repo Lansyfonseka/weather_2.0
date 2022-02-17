@@ -1,18 +1,19 @@
+@import '../../../scss/variables.scss';
+
 .search {
   position: relative;
   display: flex;
 
   &__input, .search__button{
-    padding: 0 10px; 
+    padding: 0 $app-base-margin-padding; 
     height: 40px;
-    font-size: 16px;
-    font-style: italic;
-    background-color: #ffffff30;
-    backdrop-filter: blur(2px) contrast(0.8);
-    transition: 200ms ease-in-out;
+    font-size: $app-font-size-small;
+    font-style: $app-font-style-italic;
+    background-color: $app-base-background-color;
+    backdrop-filter: $app-base-filter;
+    transition: $app-base-animation;
     &:hover {
-      background-color: #ffffff70;
-      transition: 200ms ease-in-out;
+      background-color: $app-base-background-color-hover;
     }
   }
 
@@ -20,17 +21,16 @@
     padding-right: 40px;     
     width: 20vw;
     max-width: 200px;
-    min-width: 110px;    
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    min-width: 140px;    
+    border-top-left-radius: $app-base-border-radius;
+    border-bottom-left-radius: $app-base-border-radius;
   }
 
   &__button {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-right-radius: $app-base-border-radius;
+    border-bottom-right-radius: $app-base-border-radius;
     &:hover {
-      background-color: #ffffff70;
-      transition: 200ms ease-in-out;
+      background-color: $app-base-background-color-hover;
     }
   }
 
@@ -44,15 +44,15 @@
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
+    transition: $app-base-animation;
     z-index: 1;
     &:hover {
-      background-color: #ffffff70;
-      transition: 200ms ease-in-out;
+      background-color: $app-base-background-color-hover;
     }
   }
 }
 
-@media screen and (max-width: 620px){
+@media screen and (max-width: $app-viewport-breakpoint-small){
   .search {
     margin-top: 20px;
     &__input {

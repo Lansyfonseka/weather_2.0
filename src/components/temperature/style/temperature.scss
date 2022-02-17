@@ -1,27 +1,28 @@
+@import '../../../scss/variables.scss';
+
 .temperature__switch {
   display: flex;
 
   .temperature {
-    background-color: #ffffff30;
-    backdrop-filter: blur(2px) contrast(0.8);
+    background-color: $app-base-background-color;
+    backdrop-filter: $app-base-filter;
     width: 40px;
     height: 40px;
-    font-size: 20px;
-    font-style: italic;
-    transition: 200ms ease-in-out;
+    font-size: $app-font-size-medium;
+    font-style: $app-font-style-italic;
+    transition: $app-base-animation;
 
     &:hover {
-      background-color: #ffffff70;
-      transition: 200ms ease-in-out;
+      background-color: $app-base-background-color-hover;
     }
   }
   .celsius {
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    border-top-left-radius: $app-base-border-radius;
+    border-bottom-left-radius: $app-base-border-radius;
   }
   .fahrenheit {
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    border-top-right-radius: $app-base-border-radius;
+    border-bottom-right-radius: $app-base-border-radius;
   }
 }
 

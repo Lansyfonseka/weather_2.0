@@ -1,43 +1,47 @@
+@import '../../../scss/variables.scss';
+
 .language-select {
   margin: 0 20px;
-  padding-left: 10px;
+  padding-left: $app-base-margin-padding;
   display: flex;
   align-items: center;
-  background-color: #ffffff30;
-  backdrop-filter: blur(2px) contrast(0.8);
-  border-radius: 10px;
-  transition: 200ms ease-in-out;
+  background-color: $app-base-background-color;
+  backdrop-filter: $app-base-filter;
+  border-radius: $app-base-border-radius;
+  transition: $app-base-animation;
   cursor: pointer;
+  z-index: 5;
 
   &::after {
     content: '';
-    margin: 0 10px;
+    margin: 0 $app-base-margin-padding;
     width: 20px;
     height: 40px;
     background-image: url('../../../assets/icons/arrow.svg');
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
-    transition: 200ms ease-in-out;
+    transition: $app-base-animation;
   }
 
   &__body {
-    // display: none;
     position: absolute;
-    margin: 0;
     left: 0;
     top: 100%;    
-    padding: 0 10px;
+    padding: 0 $app-base-margin-padding;
+    height: 0;    
     width: 100%;
-    background-color: #ffffff30;
-    backdrop-filter: blur(2px) contrast(0.8);
-    border-radius: 10px;
+    background-color: $app-base-background-color;
+    backdrop-filter: $app-base-filter;
+    border-radius: $app-base-border-radius;
+    transition: $app-base-animation;
     opacity: 0;
-    transition: 200ms ease-in-out;
+    
     pointer-events: none;
+    overflow: hidden;
     p {      
       margin: 0;
-      transition: 200ms ease-in-out;
+      transition: $app-base-animation;
       cursor: pointer;
       &:hover {
         transform: scale(1.1);
@@ -45,7 +49,7 @@
     }
   }
   &:hover {
-    background-color: #ffffff70;
+    background-color: $app-base-background-color-hover;
   }
 }
 
@@ -54,13 +58,14 @@
     transform: rotate(180deg);
   }
   .language-select__body {
-    // display: block;
-    opacity: 1;   
-    margin-top: 10px;
-    pointer-events: all;     
-    p {      
-      margin: 10px 0;
-      transition: 200ms ease-in-out;
+    opacity: 1;
+    margin-top: $app-base-margin-padding;
+    height: auto;
+    box-shadow: $app-base-box-shadow-low;
+    pointer-events: all;
+    p {
+      margin: $app-base-margin-padding 0;
+      transition: $app-base-animation;
     }
   } 
 }

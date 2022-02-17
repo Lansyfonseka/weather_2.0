@@ -1,3 +1,5 @@
+@import '../../../scss/variables.scss';
+
 .reload-image {
   width: 40px;
   height: 40px;
@@ -5,13 +7,12 @@
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #ffffff30;
-  backdrop-filter: blur(2px) contrast(0.8);
-  border-radius: 10px;
-  transition: 200ms ease-in-out;
+  background-color: $app-base-background-color;
+  backdrop-filter: $app-base-filter;
+  border-radius: $app-base-border-radius;
+  transition: $app-base-animation;
 
   &:hover {
-    background-color: #ffffff70;
-    transition: 200ms ease-in-out;
+    background-color: $app-base-background-color-hover;
   }
 }

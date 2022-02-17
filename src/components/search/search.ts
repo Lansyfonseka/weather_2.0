@@ -1,5 +1,7 @@
+import spinner from '../spinner/spinner';
 import storage from '../storage/storage';
-import './style/search.scss'
+import './style/search.scss';
+
 
 class Search {
   searchInput: HTMLInputElement;
