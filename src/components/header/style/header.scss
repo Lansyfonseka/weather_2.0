@@ -6,6 +6,10 @@
 
   .switchers {
     display: flex;
+    justify-content: space-between;
+    width: 40%;
+    min-width: 300px;
+    max-width: 350px;
     font-style: italic;
   }  
 }
@@ -15,5 +19,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .switchers {
+      width: 80%;
+      max-width: none;
+    }
   }
 }

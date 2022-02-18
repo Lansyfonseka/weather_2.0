@@ -1,60 +1,51 @@
 @import '../../../scss/variables.scss';
 
 .language-select {
-  margin: 0 20px;
-  padding-left: $app-base-margin-padding;
-  display: flex;
-  align-items: center;
-  background-color: $app-base-background-color;
-  backdrop-filter: $app-base-filter;
-  border-radius: $app-base-border-radius;
-  transition: $app-base-animation;
-  cursor: pointer;
-  z-index: 5;
-
-  &::after {
-    content: '';
-    margin: 0 $app-base-margin-padding;
-    width: 20px;
-    height: 40px;
-    background-image: url('../../../assets/icons/arrow.svg');
-    background-size: 80%;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: $app-base-animation;
+  position: relative;
+  &__header {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-left: $app-base-margin-padding;
+    cursor: pointer;
+    @extend %app-base-blur-component;
+    @extend %app-base-blur-component-hover;
+    &::after {
+      content: '';
+      margin: 0 $app-base-margin-padding;
+      width: 20px;
+      height: 40px;
+      background-image: url('../../../assets/icons/arrow.svg');
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+      transition: $app-base-animation;
+    }
   }
-
   &__body {
     position: absolute;
-    left: 0;
     top: 100%;    
-    padding: 0 $app-base-margin-padding;
-    height: 0;    
+    left: 0;
     width: 100%;
-    background-color: $app-base-background-color;
-    backdrop-filter: $app-base-filter;
-    border-radius: $app-base-border-radius;
-    transition: $app-base-animation;
-    opacity: 0;
-    
+    height: 0;    
+    padding: 0 $app-base-margin-padding;
+    @extend %app-base-blur-component;
+    @extend %app-base-blur-component-hover;
+    opacity: 0;    
     pointer-events: none;
     overflow: hidden;
     p {      
       margin: 0;
-      transition: $app-base-animation;
       cursor: pointer;
       &:hover {
         transform: scale(1.1);
       }
     }
   }
-  &:hover {
-    background-color: $app-base-background-color-hover;
-  }
 }
 
 .active {
-  &::after {
+  .language-select__header::after {
     transform: rotate(180deg);
   }
   .language-select__body {
@@ -63,9 +54,10 @@
     height: auto;
     box-shadow: $app-base-box-shadow-low;
     pointer-events: all;
+    z-index: 5;
     p {
       margin: $app-base-margin-padding 0;
-      transition: $app-base-animation;
+      transition: inherit;
     }
   } 
 }

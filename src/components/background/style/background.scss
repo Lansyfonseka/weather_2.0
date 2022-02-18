@@ -2,17 +2,19 @@
 
 .reload-image {
   width: 40px;
-  height: 40px;
-  background-image: url('../../../assets/icons/return.svg');
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: $app-base-background-color;
-  backdrop-filter: $app-base-filter;
-  border-radius: $app-base-border-radius;
-  transition: $app-base-animation;
-
-  &:hover {
-    background-color: $app-base-background-color-hover;
+  height: 40px;  
+  @extend %app-base-blur-component;
+  @extend %app-base-blur-component-hover;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/icons/return.svg');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }

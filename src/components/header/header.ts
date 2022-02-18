@@ -4,6 +4,7 @@ import '../language/language'
 import '../temperature/temperature'
 import '../search/search'
 import '../background/background'
+import '../theme/theme-switch'
 
 class Header {
   render () {
@@ -25,6 +26,7 @@ class Header {
           <button class="temperature celsius">°C</button>
           <button class="temperature fahrenheit">°F</button>
         </section>
+        <button class="theme__switch"></button>
       </section>
       <section class="search">
         <input type="text" class="search__input" placeholder="Search City">

@@ -3,26 +3,21 @@
 .temperature__switch {
   display: flex;
 
-  .temperature {
-    background-color: $app-base-background-color;
-    backdrop-filter: $app-base-filter;
+  &_celsius, &_fahrenheit {
+    @extend %app-base-blur-component;
     width: 40px;
     height: 40px;
     font-size: $app-font-size-medium;
     font-style: $app-font-style-italic;
-    transition: $app-base-animation;
-
     &:hover {
       background-color: $app-base-background-color-hover;
     }
   }
-  .celsius {
-    border-top-left-radius: $app-base-border-radius;
-    border-bottom-left-radius: $app-base-border-radius;
+  &_celsius {
+    border-radius: $app-base-border-radius 0 0 $app-base-border-radius;
   }
-  .fahrenheit {
-    border-top-right-radius: $app-base-border-radius;
-    border-bottom-right-radius: $app-base-border-radius;
+  &_fahrenheit {
+    border-radius: 0 $app-base-border-radius $app-base-border-radius 0;
   }
 }
 
