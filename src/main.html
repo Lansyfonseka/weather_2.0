@@ -9,7 +9,7 @@
   </script>
 </head>
 <body>
-  <div class="app">
+  <div class="app dark">
     <header class="header">
       <section class="switchers">
         <button class="reload-image"></button>
@@ -48,29 +48,62 @@
             <img src="./assets/icons/weather_icon/cloudy.svg" alt="cloudy">
           </p>
           <div class="weather__today_detail">
-
+            <div class="weather__today_detail_wind">
+              <p class="parameter-title">Wind speed</p>
+              <p class="parameter-value">3m/s</p>
+            </div>
+            <div class="weather__today_detail_fells">
+              <p class="parameter-title">Fells like</p>
+              <p class="parameter-value">-8°C</p>
+            </div>
+            <div class="weather__today_detail_visibility">
+              <p class="parameter-title">Visibility</p>
+              <p class="parameter-value">12m</p>
+            </div>
+            <div class="weather__today_detail_uvIndex">
+              <p class="parameter-title">UV-index</p>
+              <p class="parameter-value">2</p>
+            </div>
+            <div class="weather__today_detail_humidity">
+              <p class="parameter-title">Humidity</p>
+              <svg viewBox="0 0 36 36" class="circle">
+                <path class="circle__background"
+                  d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831
+                    "
+                />
+                <path class="circle__fill"
+                  stroke-dasharray="30, 100"
+                  d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831
+                    "
+                />
+                <text x="8" y="20.35" class="circle__value">30%</text>
+              </svg>
+            </div>
+            <div class="weather__today_detail_rain">
+              <p class="parameter-title">Rain</p>
+              <svg viewBox="0 0 36 36" class="circle">
+                <path class="circle__background"
+                  d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831
+                    "
+                />
+                <path class="circle__fill"
+                  stroke-dasharray="30, 100"
+                  d="M18 2.0845
+                  a 15.9155 15.9155 0 0 1 0 31.831
+                  a 15.9155 15.9155 0 0 1 0 -31.831
+                    "
+                />
+                <text x="8" y="20.35" class="circle__value">30%</text>
+              </svg>
+            </div>
           </div>
-          <svg viewBox="0 0 36 36" class="circular-chart orange">
-            <path class="circle"
-              d="M18 2.0845
-              a 13 13 0 0 1 0 32
-              a 13 13 0 0 1 0 -32
-                "
-                style="fill: none;
-                stroke: #00000017;"
-            />
-            <path class="circle"
-              stroke-dasharray="30, 100"
-              d="M18 2.0845
-                a 13 13 0 0 1 0 32
-                a 13 13 0 0 1 0 -32
-                "
-              style="stroke: red;
-              fill: none;
-              stroke-width: 0.8px;
-              stroke-linecap: round;"
-            />
-          </svg>
+          
           <button class="arrow"></button>
         </div>
         <div class="weather__daily">

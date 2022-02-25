@@ -2,16 +2,18 @@ import './style/theme-switch.scss';
 
 class ThemeSwitch {
   button:HTMLElement;
+  app:HTMLElement;
   constructor () {
-    this.changeTheme = this.changeTheme.bind(this)
+    this.changeTheme = this.changeTheme.bind(this);
   }
   init () {
     this.button = document.querySelector('.theme__switch');
-    this.button.addEventListener('click',this.changeTheme)
+    this.app = document.querySelector('.app');
+    this.button.addEventListener('click',this.changeTheme);
   }
-  changeTheme () {
+  changeTheme () {    
     this.button.classList.toggle('active');
-    document.body.classList.toggle('dark');
+    this.app.classList.toggle('dark');
   }
   render () {
 

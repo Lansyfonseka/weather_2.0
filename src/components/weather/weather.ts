@@ -10,6 +10,14 @@ class Weather {
 
     // this.frame.appendChild(spiner.render());
   }
+  init() {
+    const button = document.querySelector('.arrow');
+    const waetherToday = button.parentElement;
+    button.addEventListener('click', () => {
+      console.log('Details')
+      waetherToday.classList.toggle('full-description')
+    })
+  }
   render() {
     return this.frame;
   }

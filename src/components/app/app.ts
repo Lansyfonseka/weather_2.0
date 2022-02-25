@@ -5,6 +5,7 @@ import initYandexMap from '../../services/yandex-map.service';
 import search from '../search/search';
 import spinner from '../spinner/spinner';
 import themeSwitch from '../theme/theme-switch';
+import language from '../language/language';
 
 class App {
   entryPoint: HTMLElement;
@@ -24,9 +25,11 @@ class App {
     // const {latitude,longitude} = storage.loactionInfo.location;
     // await initYandexMap(latitude,longitude);
 
+    document.body.appendChild(spinner.render());
+    language.init();
+    weather.init();
     search.init();
     themeSwitch.init();
-    document.body.appendChild(spinner.render());
     spinner.hide();
   }
 }

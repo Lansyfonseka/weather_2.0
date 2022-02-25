@@ -1,12 +1,15 @@
 @import './variables.scss';
 
-body.dark {
-  .weather__today, .reload-image, .language-select__header, .language-select__body, .search__input, .search__button,
+ body .dark{
+  .reload-image, .language-select__header, .language-select__body, .search__input, .search__button,
   .temperature__switch button, .item-card__front-side, .item-card__back-side, .theme__switch {
     @extend %app-base-blur-component-dark;
     @extend %app-base-blur-component-hover-dark;
   }
-  .language-select__header::after, .reload-image::after, .arrow::after, .search__microphone::after, .theme__switch::after {
+  .weather__today {
+    @extend %app-base-blur-component-dark;
+  }
+  .language-select__header::after, .reload-image::after, .arrow::after, .search__microphone::after, .theme__switch::before {
     filter: invert(1);
   }
   .weather__daily .item-card__front-side .weather__daily_temperature .temperature-night {
@@ -17,11 +20,15 @@ body.dark {
     @extend %app-base-blur-component-hover-dark;
   }
 
-  .weather__daily .item-card__back-side, .weather__today {
+  .weather__daily .item-card__back-side {
     pointer-events: none;
     .bottom-dots {
-      border-color: #ffffff
+      border-color: #ffffff;
     }
+  }
+
+  .weather__today_detail div .circle .circle__value {
+    fill: #ffffff;
   }
 
   .spinner {
