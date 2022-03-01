@@ -1,18 +1,20 @@
 import getUserLoaction from "../../services/user-location.service";
 import getWeather from "../../services/weather.service";
 import LocationInfo from "../../services/models/services.model";
+import initYandexMap from "../../services/yandex-map.service";
 
 class Storage {
-  weatherToday:Object;
+  weather:Object;
   loactionInfo: LocationInfo;
   myMap: {searchLocation:Function}
   constructor () {
-    this.weatherToday = {};
   }
   async init () {
     this.loactionInfo = await getUserLoaction();
-    getWeather(this.loactionInfo.location.latitude,this.loactionInfo.location.longitude)
+    this.myMap = await initYandexMap(this.loactionInfo.location.latitude,this.loactionInfo.location.longitude);
+    await this.myMap.searchLocation(this.loactionInfo.city);
+    this.weather = await getWeather(this.loactionInfo.location);
   }
 }
 
-export default new Storage()
+export default new Storage();

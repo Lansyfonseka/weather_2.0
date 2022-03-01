@@ -9,7 +9,7 @@
   .weather__today {
     @extend %app-base-blur-component-dark;
   }
-  .language-select__header::after, .reload-image::after, .arrow::after, .search__microphone::after, .theme__switch::before {
+  .language-select__header::after, .reload-image::after, .arrow::after, .search__microphone::after, .theme__switch::after {
     filter: invert(1);
   }
   .weather__daily .item-card__front-side .weather__daily_temperature .temperature-night {

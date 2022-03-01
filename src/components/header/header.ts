@@ -1,12 +1,20 @@
 import './style/header.scss'
 
-import '../language/language'
-import '../temperature/temperature'
 import '../search/search'
-import '../background/background'
-import '../theme/theme-switch'
+import background from '../background/background'
+import language from '../language/language'
+import temperature from '../temperature/temperature'
+import themeSwitch from '../theme/theme-switch'
+import search from '../search/search'
 
 class Header {
+  init () {
+    background.init();
+    language.init();
+    temperature.init();
+    themeSwitch.init();
+    search.init();
+  }
   render () {
     return `
     <header class="header">
@@ -23,8 +31,8 @@ class Header {
           </div>
         </div>        
         <section class="temperature__switch">
-          <button class="temperature celsius">°C</button>
-          <button class="temperature fahrenheit">°F</button>
+          <button class="temperature__switch_celsius celsius">°C</button>
+          <button class="temperature__switch_fahrenheit fahrenheit">°F</button>
         </section>
         <button class="theme__switch"></button>
       </section>

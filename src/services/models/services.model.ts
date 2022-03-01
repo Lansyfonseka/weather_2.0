@@ -1,4 +1,5 @@
 export default interface LocationInfo {
   location: {latitude:number, longitude:number};
-  city: string
+  city: string;
+  country?: string;
 }
