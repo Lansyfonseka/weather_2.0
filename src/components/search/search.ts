@@ -1,7 +1,9 @@
+import getWeather from '../../services/weather.service';
+import background from '../background/background';
 import spinner from '../spinner/spinner';
 import storage from '../storage/storage';
+import weather from '../weather/weather';
 import './style/search.scss';
-
 
 class Search {
   searchInput: HTMLInputElement;
@@ -20,13 +22,16 @@ class Search {
         this.search();
     })
   }
-  search () {
+  async search () {
+    spinner.show();
+    weather.unmount();
     const searchCity:string = this.searchInput.value;
-    storage.myMap.searchLocation(searchCity);
-  }
-
-  render () {
-
+    storage.loactionInfo = await storage.myMap.searchLocation(searchCity);
+    storage.weather = await getWeather(storage.loactionInfo.location);
+    weather.render(storage.weather);
+    weather.init();
+    background.reloadImage();
+    spinner.hide();
   }
 }
 

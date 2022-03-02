@@ -1,9 +1,10 @@
 declare namespace ymaps {
-  export function ready(): Promise;
+  export function ready(): Function;
   export function geocode(seacrhCity:string, confin:SearchConfig):Promise;
 
   class Promise {
-    then(onFulfilled?: Function, onRejected?: Function, onProgress?: Function, ctx?: any): Promise;
+    public Map(element: string | any, state: MapState):Map;
+    then(onFulfilled?: Function, onRejected?: Function, onProgress?: Function, searchLocation?:Function, ctx?: any): Function;
   }
 
   export class Map {

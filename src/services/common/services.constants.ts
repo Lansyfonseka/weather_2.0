@@ -1,7 +1,7 @@
 export const MAIN_API_URLS = {
   WEATHER: 'https://api.darksky.net/forecast/',
   USER_LOCATION: 'https://ipinfo.io/json?token=',
-  BACKGROUND: 'https://api.pexels.com/v1/'
+  BACKGROUND: 'https://api.pexels.com/v1/search'
 }
 
 export const MAIN_API_KEYS = {

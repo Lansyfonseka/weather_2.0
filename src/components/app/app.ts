@@ -19,7 +19,7 @@ class App {
     header.init();
     
     mainContainer.prepend(weather.body);
-    weather.render(await storage.weather)
+    weather.render(storage.weather)
     weather.init();
     spinner.hide();
   }

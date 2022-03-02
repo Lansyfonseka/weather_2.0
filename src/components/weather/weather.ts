@@ -1,6 +1,5 @@
 import './style/weather.scss';
 
-import spiner from '../spinner/spinner';
 import storage from '../storage/storage';
 import WeatherDay from './weather-day';
 
@@ -21,11 +20,8 @@ class Weather {
     button.addEventListener('click', () => {
       waetherToday.classList.toggle('full-description')
     });
-    // this.weatherToday = this.frame.querySelector('.weather__today');
-    // this.weatherDaily = this.frame.querySelector('.weather__daily');
   }
   unmount () {
-    console.log("Unmount")
     this.frame.innerHTML = '';
   }
   render(weather:any) {
@@ -48,7 +44,7 @@ class Weather {
     this.frame.innerHTML = `
         <div class="weather__today">
           <p class="weather__today_city">${storage.loactionInfo.city}</p>
-          <p class="weather__today_country">${storage.loactionInfo.country}</p>
+          <p class="weather__today_country">${storage.loactionInfo.country || ''}</p>
           <p class="weather__today_day">Wednesday, 8 February</p>
           <p class="weather__today_description">${currently.summary}</p>
           <p class="weather__today_temperature">
@@ -104,7 +100,6 @@ class Weather {
         </div>
         <div class="weather__daily">${dailyContent}</div>
     `;
-    return this.frame;
   }
 }
 
