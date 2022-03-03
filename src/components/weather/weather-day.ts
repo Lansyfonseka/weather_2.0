@@ -1,3 +1,4 @@
+import getShortDayOfWeek from './helpers/day-of-week';
 import './style/weather-day.scss';
 
 class WeatherDay {
@@ -5,18 +6,19 @@ class WeatherDay {
   constructor (day:any) {
     this.day = day;
   }
-  render () {
+  render (numberOfDay:number) {
+    const {nameDayOfWeek,dateDay} = getShortDayOfWeek(++numberOfDay);
     return `
     <div class="item-card">
             <div class="item-card__front-side icon-${this.day.icon}">
-              <p class="weather__daily_day">Tw, 9</p>
+              <p class="weather__daily_day">${nameDayOfWeek}, ${dateDay}</p>
               <p class="weather__daily_temperature">
                 <span class="temperature-day temperature">${Math.round(this.day.apparentTemperatureHigh)}°C</span>
                 <span class="temperature-night temperature">${Math.round(this.day.apparentTemperatureLow)}°C</span>
               </p>
             </div>
             <div class="item-card__back-side">
-              <p class="weather__daily_day">Tw, 9</p>
+              
               <p class="weather__daily_temperature-day item-card__back-side_line">
                 <span>Day</span>
                 <span class="bottom-dots"></span>

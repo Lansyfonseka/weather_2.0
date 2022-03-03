@@ -27,8 +27,8 @@ class Weather {
   render(weather:any) {
     const {currently, daily} = weather;
     let dailyContent:string = '';
-    daily.data.forEach( (e:Object) => {
-      dailyContent += new WeatherDay(e).render();
+    daily.data.forEach( (e:Object,index:number) => {
+      dailyContent += new WeatherDay(e).render(index);
     });
     const circleFill = (value:number) => {
       if (value !== 0)
@@ -41,11 +41,12 @@ class Weather {
         "
       />`
     }
+    const date = new Date();
     this.frame.innerHTML = `
         <div class="weather__today">
           <p class="weather__today_city">${storage.loactionInfo.city}</p>
           <p class="weather__today_country">${storage.loactionInfo.country || ''}</p>
-          <p class="weather__today_day">Wednesday, 8 February</p>
+          <p class="weather__today_day">${date.toString().split(' ')[0]}, ${date.getDate()} February</p>
           <p class="weather__today_description">${currently.summary}</p>
           <p class="weather__today_temperature">
             <span class="temperature">${Math.round(currently.temperature)}°C</span>

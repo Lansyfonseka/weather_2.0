@@ -42,6 +42,7 @@
       justify-content: space-evenly;
       padding: $app-base-margin-padding;
       @extend %app-base-blur-component;
+      font-size: 18px;
       text-align: center;
       background-color: #ffffff54;
       transform: rotateY(180deg);
