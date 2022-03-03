@@ -19,6 +19,11 @@
   &_fahrenheit {
     border-radius: 0 $app-base-border-radius $app-base-border-radius 0;
   }
+  .active {
+    box-shadow: inset 0px 0px 10px 0px #000000a1;
+    cursor: default;
+    pointer-events: none;
+  }
 }
 
 

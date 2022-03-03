@@ -2,6 +2,8 @@ import './style/weather.scss';
 
 import storage from '../storage/storage';
 import WeatherDay from './weather-day';
+import { celsiusToFahrenheit } from './helpers/celsius-to-fahrenheit';
+import { TEMPERATURE_SYMBOLS } from './helpers/temperature-symbols';
 
 class Weather {
   frame:HTMLElement;
@@ -24,12 +26,15 @@ class Weather {
   unmount () {
     this.frame.innerHTML = '';
   }
-  render(weather:any) {
-    const {currently, daily} = weather;
+  render({currently, daily}:any) {
+    const date = new Date();
+    const currentTemperatureSymbol = storage.isCelsius ? TEMPERATURE_SYMBOLS.CELSIUS : TEMPERATURE_SYMBOLS.FAHRENHEIT;
+
     let dailyContent:string = '';
     daily.data.forEach( (e:Object,index:number) => {
       dailyContent += new WeatherDay(e).render(index);
     });
+
     const circleFill = (value:number) => {
       if (value !== 0)
       return `
@@ -41,7 +46,7 @@ class Weather {
         "
       />`
     }
-    const date = new Date();
+    
     this.frame.innerHTML = `
         <div class="weather__today">
           <p class="weather__today_city">${storage.loactionInfo.city}</p>
@@ -49,7 +54,7 @@ class Weather {
           <p class="weather__today_day">${date.toString().split(' ')[0]}, ${date.getDate()} February</p>
           <p class="weather__today_description">${currently.summary}</p>
           <p class="weather__today_temperature">
-            <span class="temperature">${Math.round(currently.temperature)}°C</span>
+            <span class="temperature">${Math.round(storage.isCelsius ? currently.temperature : celsiusToFahrenheit(currently.temperature))}${currentTemperatureSymbol}</span>
             <img src="./assets/icons/weather_icon/${currently.icon}.svg" alt="${currently.icon}">
           </p>
           <div class="weather__today_detail">
@@ -59,7 +64,7 @@ class Weather {
             </div>
             <div class="weather__today_detail_fells">
               <p class="parameter-title">Fells like</p>
-              <p class="parameter-value">${Math.round(currently.apparentTemperature)}°C</p>
+              <p class="parameter-value">${Math.round(storage.isCelsius ? currently.apparentTemperature : celsiusToFahrenheit(currently.apparentTemperature))}${currentTemperatureSymbol}</p>
             </div>
             <div class="weather__today_detail_visibility">
               <p class="parameter-title">Visibility</p>

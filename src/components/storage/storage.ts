@@ -7,6 +7,7 @@ class Storage {
   weather:Object;
   loactionInfo: LocationInfo;
   myMap: {searchLocation:Function};
+  isCelsius: boolean;
   constructor () {
   }
   async init () {
@@ -14,6 +15,7 @@ class Storage {
     this.myMap = await initYandexMap(this.loactionInfo.location.latitude,this.loactionInfo.location.longitude);
     this.loactionInfo = await this.myMap.searchLocation(this.loactionInfo.city);    
     this.weather = await getWeather(this.loactionInfo.location);
+    this.isCelsius = true;
   }
 }
 
