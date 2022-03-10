@@ -4,6 +4,7 @@ import storage from '../storage/storage';
 import WeatherDay from './weather-day';
 import { celsiusToFahrenheit } from './helpers/celsius-to-fahrenheit';
 import { TEMPERATURE_SYMBOLS } from './helpers/temperature-symbols';
+import { DATA_LANGUAGES_MAP } from '../language/helpers/DATA-LANGUAGES-MAP';
 
 class Weather {
   frame:HTMLElement;
@@ -26,13 +27,13 @@ class Weather {
   unmount () {
     this.frame.innerHTML = '';
   }
-  render({currently, daily}:any) {
+  render({currently, daily}:any,lang:string) {
     const date = new Date();
     const currentTemperatureSymbol = storage.isCelsius ? TEMPERATURE_SYMBOLS.CELSIUS : TEMPERATURE_SYMBOLS.FAHRENHEIT;
 
     let dailyContent:string = '';
     daily.data.forEach( (e:Object,index:number) => {
-      dailyContent += new WeatherDay(e).render(index);
+      dailyContent += new WeatherDay(e).render(index,lang);
     });
 
     const circleFill = (value:number) => {
@@ -51,7 +52,7 @@ class Weather {
         <div class="weather__today">
           <p class="weather__today_city">${storage.loactionInfo.city}</p>
           <p class="weather__today_country">${storage.loactionInfo.country || ''}</p>
-          <p class="weather__today_day">${date.toString().split(' ')[0]}, ${date.getDate()} February</p>
+          <p class="weather__today_day">${DATA_LANGUAGES_MAP.week[lang][date.getDay()]}, ${date.getDate()} ${DATA_LANGUAGES_MAP.month[lang][date.getMonth()]}</p>
           <p class="weather__today_description">${currently.summary}</p>
           <p class="weather__today_temperature">
             <span class="temperature">${Math.round(storage.isCelsius ? currently.temperature : celsiusToFahrenheit(currently.temperature))}${currentTemperatureSymbol}</span>
@@ -59,23 +60,23 @@ class Weather {
           </p>
           <div class="weather__today_detail">
             <div class="weather__today_detail_wind">
-              <p class="parameter-title">Wind speed</p>
-              <p class="parameter-value">${Math.round(currently.windSpeed)}m/s</p>
+              <p class="parameter-title">${DATA_LANGUAGES_MAP.other.windSpeed[lang]}</p>
+              <p class="parameter-value">${Math.round(currently.windSpeed)}${DATA_LANGUAGES_MAP.other.speed[lang]}</p>
             </div>
             <div class="weather__today_detail_fells">
-              <p class="parameter-title">Fells like</p>
+              <p class="parameter-title">${DATA_LANGUAGES_MAP.other.feels[lang]}</p>
               <p class="parameter-value">${Math.round(storage.isCelsius ? currently.apparentTemperature : celsiusToFahrenheit(currently.apparentTemperature))}${currentTemperatureSymbol}</p>
             </div>
             <div class="weather__today_detail_visibility">
-              <p class="parameter-title">Visibility</p>
+              <p class="parameter-title">${DATA_LANGUAGES_MAP.other.visibility[lang]}</p>
               <p class="parameter-value">${Math.round(currently.visibility)}m</p>
             </div>
             <div class="weather__today_detail_uvIndex">
-              <p class="parameter-title">UV-index</p>
+              <p class="parameter-title">${DATA_LANGUAGES_MAP.other.uvIndex[lang]}</p>
               <p class="parameter-value">${Math.round(currently.uvIndex)}</p>
             </div>
             <div class="weather__today_detail_humidity">
-              <p class="parameter-title">Humidity</p>
+              <p class="parameter-title">${DATA_LANGUAGES_MAP.other.humidity[lang]}</p>
               <svg viewBox="0 0 36 36" class="circle">
                 <path class="circle__background"
                   d="M18 2.0845
@@ -88,7 +89,7 @@ class Weather {
               </svg>
             </div>
             <div class="weather__today_detail_rain">
-              <p class="parameter-title">Rain</p>
+              <p class="parameter-title">${DATA_LANGUAGES_MAP.other.rain[lang]}</p>
               <svg viewBox="0 0 36 36" class="circle">
                 <path class="circle__background"
                   d="M18 2.0845

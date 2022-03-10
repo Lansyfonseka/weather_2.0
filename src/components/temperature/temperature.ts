@@ -28,7 +28,7 @@ class Temperature {
     spinner.show();
     storage.isCelsius = !storage.isCelsius;
     weather.unmount();
-    weather.render(storage.weather);
+    weather.render(storage.weather,storage.lang);
     weather.init();
     spinner.hide()
   }

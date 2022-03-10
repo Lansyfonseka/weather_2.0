@@ -27,8 +27,8 @@ class Search {
     weather.unmount();
     const searchCity:string = this.searchInput.value;
     storage.loactionInfo = await storage.myMap.searchLocation(searchCity);
-    storage.weather = await getWeather(storage.loactionInfo.location);
-    weather.render(storage.weather);
+    storage.weather = await getWeather(storage.loactionInfo.location,storage.lang);
+    weather.render(storage.weather,storage.lang);
     weather.init();
     background.reloadImage();
     spinner.hide();

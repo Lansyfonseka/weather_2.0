@@ -10,16 +10,16 @@ class App {
   }
   async init() {
     document.body.appendChild(spinner.render());
-    this.entryPoint.innerHTML = header.render();
     const mainContainer = document.createElement('main');
     mainContainer.classList.add('main');
     this.entryPoint.appendChild(mainContainer);
-    
     await storage.init();
+    this.entryPoint.prepend(header.render(storage.lang));
+    
     header.init();
     
     mainContainer.prepend(weather.body);
-    weather.render(storage.weather)
+    weather.render(storage.weather,storage.lang)
     weather.init();
     spinner.hide();
   }

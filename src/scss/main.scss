@@ -8,6 +8,7 @@ body {
   background: url(https://images.pexels.com/photos/1424337/pexels-photo-1424337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   background-position: center;
   background-size: cover;
+  transition: $app-base-animation;
 }
 
 .app {

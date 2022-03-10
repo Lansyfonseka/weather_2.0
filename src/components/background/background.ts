@@ -3,17 +3,27 @@ import storage from '../storage/storage';
 import './style/background.scss';
 
 class Background {
+  reloadImageButton: HTMLElement;
+  reloadImageIcon: HTMLElement;
   init () {
-    const reloadImageButton = document.querySelector('.reload-image');
-    reloadImageButton.addEventListener('click',this.reloadImage);
+    this.reloadImageButton = document.querySelector('.reload-image');
+    this.reloadImageIcon = this.reloadImageButton.firstElementChild as HTMLElement;
+    this.reloadImage = this.reloadImage.bind(this);
+    this.reloadImageButton.addEventListener('click',this.reloadImage);
   }
   async reloadImage () {
-    const {mainImageUrl, lowImageUrl} = await getImageUrl(await storage.loactionInfo.city);
-    document.body.style.backgroundImage = `url('${lowImageUrl}')`;
-    const image = new Image();
-    image.src = mainImageUrl;
-    image.onload = () => {
-      document.body.style.backgroundImage = `url('${mainImageUrl}')`;
+    this.reloadImageIcon.classList.add('rotate');
+    const {mainImageUrl, lowImageUrl} = await getImageUrl(storage.loactionInfo.city);
+    const lowImage = new Image();
+    const mainImage = new Image();
+    lowImage.src = lowImageUrl;
+    mainImage.src = mainImageUrl;
+    lowImage.onload = () => {
+      document.body.style.backgroundImage = `url('${lowImageUrl}')`;
+      mainImage.onload = () => {
+        document.body.style.backgroundImage = `url('${mainImageUrl}')`;
+        this.reloadImageIcon.classList.remove('rotate');
+      }
     }
   }
 }
