@@ -1,5 +1,6 @@
 import getWeather from '../../services/weather.service';
 import background from '../background/background';
+import { DATA_LANGUAGES_MAP } from '../language/helpers/DATA-LANGUAGES-MAP';
 import spinner from '../spinner/spinner';
 import storage from '../storage/storage';
 import weather from '../weather/weather';
@@ -21,6 +22,10 @@ class Search {
       if (!event.repeat && event.key === keyCodeEnter)
         this.search();
     })
+  }
+  changeLang(lang:string) {
+    this.searchInput.placeholder = DATA_LANGUAGES_MAP.other.searchCity[lang];
+    this.searchButton.innerHTML = DATA_LANGUAGES_MAP.other.search[lang];
   }
   async search () {
     spinner.show();

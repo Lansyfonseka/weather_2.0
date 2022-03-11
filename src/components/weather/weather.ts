@@ -69,7 +69,7 @@ class Weather {
             </div>
             <div class="weather__today_detail_visibility">
               <p class="parameter-title">${DATA_LANGUAGES_MAP.other.visibility[lang]}</p>
-              <p class="parameter-value">${Math.round(currently.visibility)}m</p>
+              <p class="parameter-value">${Math.round(currently.visibility)}${DATA_LANGUAGES_MAP.other.length[lang]}</p>
             </div>
             <div class="weather__today_detail_uvIndex">
               <p class="parameter-title">${DATA_LANGUAGES_MAP.other.uvIndex[lang]}</p>

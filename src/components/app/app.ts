@@ -14,11 +14,11 @@ class App {
     mainContainer.classList.add('main');
     this.entryPoint.appendChild(mainContainer);
     await storage.init();
+    this.entryPoint.dataset.lang = storage.lang;
     this.entryPoint.prepend(header.render(storage.lang));
-    
     header.init();
-    
     mainContainer.prepend(weather.body);
+
     weather.render(storage.weather,storage.lang)
     weather.init();
     spinner.hide();

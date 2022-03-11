@@ -57,7 +57,7 @@ export const DATA_LANGUAGES_MAP: {
       en: "m/s",
       ru: "м/с",
       es: "m/s",
-      fr: "m/l"
+      fr: "m/s"
     },
     length: {
       en: "m",

@@ -23,3 +23,7 @@ body {
     justify-content: space-between;
   }
 }
+
+.app[data-lang="ru"] {
+  font-family: $app-font-family-ru;
+}
