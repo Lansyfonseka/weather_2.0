@@ -1,28 +1,20 @@
-name: NodeJS with Webpack
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+name: Build and Deploy
+on: [push]
 jobs:
-  build:
+  build-and-deploy:
+    concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-    
     steps:
-    - uses: actions/checkout@v2
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Install and Build
+        run: |
+          npm ci
+          npm run build
 
-    - name: Build
-      run: |
-        npm install
-        npm run deploy
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages
+          folder: dist
