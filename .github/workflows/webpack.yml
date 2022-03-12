@@ -26,3 +26,13 @@ jobs:
       run: |
         npm install
         npm run build
+  deploy: 
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Deploy
+      run: |
+        git add dist
+        git commit dist -m "deploy"
+        git push origin gh-pages
