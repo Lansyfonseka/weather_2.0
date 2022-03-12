@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [12.x]
     
     steps:
     - uses: actions/checkout@v2
@@ -26,6 +26,7 @@ jobs:
       run: |
         npm install
         npm run build
+        dir
   deploy: 
     needs: build
     runs-on: ubuntu-latest
