@@ -33,6 +33,4 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deploy
       run: |
-        git add dist -f
-        git commit dist -m "deploy"
-        git subtree push --prefix dist origin gh-pages
+        git push origin `git subtree split --prefix dist master`:gh-pages --force
