@@ -1,4 +1,4 @@
-import { DATA_LANGUAGES_MAP } from '../language/helpers/DATA-LANGUAGES-MAP';
+import { DATA_LANGUAGES_MAP } from '../language/helpers/data-languages-map';
 import storage from '../storage/storage';
 import { celsiusToFahrenheit } from './helpers/celsius-to-fahrenheit';
 import getShortDayOfWeek from './helpers/day-of-week';

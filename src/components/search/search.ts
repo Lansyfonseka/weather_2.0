@@ -1,6 +1,6 @@
 import getWeather from '../../services/weather.service';
 import background from '../background/background';
-import { DATA_LANGUAGES_MAP } from '../language/helpers/DATA-LANGUAGES-MAP';
+import { DATA_LANGUAGES_MAP } from '../language/helpers/data-languages-map';
 import spinner from '../spinner/spinner';
 import storage from '../storage/storage';
 import weather from '../weather/weather';

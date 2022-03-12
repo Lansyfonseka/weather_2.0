@@ -4,7 +4,7 @@ import storage from '../storage/storage';
 import WeatherDay from './weather-day';
 import { celsiusToFahrenheit } from './helpers/celsius-to-fahrenheit';
 import { TEMPERATURE_SYMBOLS } from './helpers/temperature-symbols';
-import { DATA_LANGUAGES_MAP } from '../language/helpers/DATA-LANGUAGES-MAP';
+import { DATA_LANGUAGES_MAP } from '../language/helpers/data-languages-map';
 
 class Weather {
   frame:HTMLElement;

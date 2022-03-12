@@ -6,7 +6,7 @@ import language from '../language/language'
 import temperature from '../temperature/temperature'
 import themeSwitch from '../theme/theme-switch'
 import search from '../search/search'
-import { DATA_LANGUAGES_MAP } from '../language/helpers/DATA-LANGUAGES-MAP'
+import { DATA_LANGUAGES_MAP } from '../language/helpers/data-languages-map'
 
 class Header {
   init () {
