@@ -33,6 +33,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Deploy
       run: |
-        git add dist
+        git add dist -f
         git commit dist -m "deploy"
-        git push origin gh-pages
+        git subtree push --prefix dist origin gh-pages
