@@ -22,17 +22,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
-      run: |
-        git checkout gh-pages
-        npm install
-        npm run build
-        dir
+    - name: Install and build
+      run: npm install && npm run build
   deploy: 
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: Deploy
-      run: |
-        dir
+    uses: JamesIves/github-pages-deploy-action@v4.2.5
+      with:
+        branch: gh-pages
+        folder: dist
