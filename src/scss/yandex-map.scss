@@ -13,3 +13,16 @@
 ymaps{
   border-radius: $app-base-border-radius;   
 }
+
+@media screen and (max-width: $app-viewport-breakpoint-medium){
+  .map {
+    margin-top: 20px;
+    min-width: 80%;
+  }
+}
+
+@media screen and (max-width: $app-viewport-breakpoint-small){
+  .map {
+    width: 100%;
+  }
+}

@@ -108,7 +108,7 @@
     .weather__today_detail {
       opacity: 1;
       overflow: visible;
-      height: 290px;
+      height: 310px;
     }
     .arrow::after {
       transform: rotate(180deg);
@@ -116,3 +116,14 @@
   }  
 }
 
+@media screen and (max-width: $app-viewport-breakpoint-medium){
+  .weather {
+    min-width: 80%;
+  }
+}
+
+@media screen and (max-width: $app-viewport-breakpoint-small){
+  .weather {
+    width: 100%;
+  }
+}

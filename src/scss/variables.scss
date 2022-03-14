@@ -5,9 +5,10 @@ $app-font-style-normal: normal;
 $app-font-family-ru: cursive;
 
 //Font sizes
-$app-font-size-large: 40px;
-$app-font-size-medium: 24px;
-$app-font-size-small: 16px;
+$app-font-size-large: 3rem;
+$app-font-size-medium: 2rem;
+$app-font-size-small: 1.2rem;
+$app-font-size-default: 1rem;
 
 //Border
 $app-base-border-radius: 10px;
@@ -30,6 +31,8 @@ $app-base-box-shadow-low: 4px 4px 10px 0px #00000061;
 $app-base-animation: 200ms ease-in-out;
 
 //Viewport breakpoint
+$app-viewport-breakpoint-large: 1024px;
+$app-viewport-breakpoint-medium: 920px;
 $app-viewport-breakpoint-small: 620px;
 
 %app-base-blur-component {

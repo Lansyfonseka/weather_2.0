@@ -42,11 +42,12 @@
       justify-content: space-evenly;
       padding: $app-base-margin-padding;
       @extend %app-base-blur-component;
-      font-size: 18px;
+      font-size: $app-font-size-small;
       text-align: center;
       background-color: #ffffff54;
       transform: rotateY(180deg);
       backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
       box-shadow: $app-base-box-shadow-normal;
       transition: $app-base-animation;
       &_line {
@@ -60,6 +61,7 @@
           white-space: nowrap;
         }
       }
+
     }
     .icon-clear-day {
       background-image: url('../../../assets/icons/weather_icon/clear-day.svg');
@@ -122,5 +124,17 @@
         transform: rotateY(0deg);
       }
     }
-  }    
-}  
+  }
+}
+
+@media screen and (max-width: $app-viewport-breakpoint-large){
+  .weather__daily .item-card__back-side {
+    font-size: $app-font-size-default;
+  }
+}
+
+@media screen and (max-width: $app-viewport-breakpoint-small){
+  .weather__daily .item-card__front-side {
+    height: 150px;
+  }
+}
