@@ -38,6 +38,7 @@ $app-viewport-breakpoint-small: 620px;
 %app-base-blur-component {
   background-color: $app-base-background-color;
   backdrop-filter: $app-base-filter;
+  -webkit-backdrop-filter: $app-base-filter;
   border-radius: $app-base-border-radius;
   transition: $app-base-animation;  
   color: #000000;
