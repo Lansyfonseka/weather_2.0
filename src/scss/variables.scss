@@ -40,6 +40,7 @@ $app-viewport-breakpoint-small: 620px;
   backdrop-filter: $app-base-filter;
   border-radius: $app-base-border-radius;
   transition: $app-base-animation;  
+  color: #000000;
 }
 
 %app-base-blur-component-hover {

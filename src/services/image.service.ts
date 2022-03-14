@@ -16,8 +16,7 @@ export default async function getImageUrl(city:string):Promise<{mainImageUrl:str
   const countOfResult = data.photos.length;
   if (countOfResult === 0 || !data.photos) {
     const baseQuery = 'weather';
-    const resultBaseQuery = getImageUrl(baseQuery);
-    return resultBaseQuery
+    return getImageUrl(baseQuery);
   } else {
     const randomPhoto = Math.floor(Math.random() * countOfResult);
     return {

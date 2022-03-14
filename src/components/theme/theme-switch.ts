@@ -15,9 +15,6 @@ class ThemeSwitch {
     this.button.classList.toggle('active');
     this.app.classList.toggle('dark');
   }
-  render () {
-
-  }
 }
 
 export default new ThemeSwitch()

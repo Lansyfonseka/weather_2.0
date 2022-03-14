@@ -21,6 +21,7 @@
       @extend %app-base-blur-component;
       text-align: center;
       backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
       transition: $app-base-animation;
       cursor: default;
       .weather__daily_temperature {

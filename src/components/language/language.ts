@@ -6,9 +6,6 @@ import weather from '../weather/weather';
 import './style/language.scss'
 
 class Language {
-  constructor () {
-
-  }
   init () {
     const button = document.querySelector('.language-select__header');
     const selector = document.querySelector('.language-select__body');
@@ -36,9 +33,6 @@ class Language {
     weather.render(storage.weather, storage.lang);
     weather.init();
     spinner.hide();
-  }
-  render () {
-
   }
 }
 

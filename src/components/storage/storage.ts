@@ -2,9 +2,10 @@ import getUserLoaction from "../../services/user-location.service";
 import getWeather from "../../services/weather.service";
 import LocationInfo from "../../services/models/services.model";
 import initYandexMap from "../../services/yandex-map.service";
+import WeatherInterface from "./models/weather-interface";
 
 class Storage {
-  weather:Object;
+  weather:WeatherInterface;
   loactionInfo: LocationInfo;
   myMap: {searchLocation:Function};
   isCelsius: boolean;

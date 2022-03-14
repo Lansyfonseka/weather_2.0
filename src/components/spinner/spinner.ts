@@ -3,13 +3,10 @@ import './style/spinner.scss'
 class Spinner {
   body:HTMLElement;
   constructor (){
-
     this.body = document.createElement('div');
     this.body.classList.add('spinner');
-
     const water = document.createElement('div');
     water.classList.add('water');
-
     this.body.appendChild(water)
   }
   show() {

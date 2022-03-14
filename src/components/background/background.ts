@@ -7,7 +7,7 @@ class Background {
   reloadImageIcon: HTMLElement;
   init () {
     this.reloadImageButton = document.querySelector('.reload-image');
-    this.reloadImageIcon = this.reloadImageButton.firstElementChild as HTMLElement;
+    this.reloadImageIcon = this.reloadImageButton.querySelector('.reload-image__icon');
     this.reloadImage = this.reloadImage.bind(this);
     this.reloadImageButton.addEventListener('click',this.reloadImage);
   }
