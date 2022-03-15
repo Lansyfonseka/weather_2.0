@@ -1,4 +1,5 @@
 import getWeather from '../../services/weather.service';
+import map from '../map/map';
 import search from '../search/search';
 import spinner from '../spinner/spinner';
 import storage from '../storage/storage';
@@ -10,6 +11,8 @@ class Language {
     const button = document.querySelector('.language-select__header');
     const selector = document.querySelector('.language-select__body');
     const leanguage = button.parentElement;
+    const activeLang = selector.querySelector(`[data-lang=${storage.lang}]`);
+    button.innerHTML = activeLang.outerHTML;
     button.addEventListener('click', () => {
       leanguage.classList.toggle('active');
     });
@@ -25,11 +28,13 @@ class Language {
   async changeLang(lang:string) {
     spinner.show();
     storage.lang = lang;
+    localStorage.lang = storage.lang
     const app = document.querySelector('.app') as HTMLElement;
     app.dataset.lang = storage.lang;
     search.changeLang(storage.lang);
+    map.changeLang(lang)
     weather.unmount();
-    storage.weather = await getWeather(storage.loactionInfo.location,storage.lang)
+    storage.weather = await getWeather(storage.locationInfo.location,storage.lang)
     weather.render(storage.weather, storage.lang);
     weather.init();
     spinner.hide();

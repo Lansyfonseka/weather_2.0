@@ -34,8 +34,8 @@ class Weather {
 
     this.frame.innerHTML = `
       <div class="weather__today">
-        <p class="weather__today_city">${storage.loactionInfo.city}</p>
-        <p class="weather__today_country">${storage.loactionInfo.country || ''}</p>
+        <p class="weather__today_city">${storage.locationInfo.city}</p>
+        <p class="weather__today_country">${storage.locationInfo.country || ''}</p>
         <p class="weather__today_day">${DATA_LANGUAGES_MAP.week[lang][date.getDay()]}, ${date.getDate()} ${DATA_LANGUAGES_MAP.month[lang][date.getMonth()]}</p>
         <p class="weather__today_description">${currently.summary}</p>
         <p class="weather__today_temperature">

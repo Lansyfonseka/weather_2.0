@@ -27,6 +27,7 @@ class Temperature {
   changeTemperature () {
     spinner.show();
     storage.isCelsius = !storage.isCelsius;
+    localStorage.isCelsius = storage.isCelsius;
     weather.unmount();
     weather.render(storage.weather,storage.lang);
     weather.init();

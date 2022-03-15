@@ -1,24 +1,24 @@
-import getUserLoaction from "../../services/user-location.service";
+import getUserLocation from "../../services/user-location.service";
 import getWeather from "../../services/weather.service";
 import LocationInfo from "../../services/models/services.model";
-import initYandexMap from "../../services/yandex-map.service";
 import WeatherInterface from "./models/weather-interface";
+import map from "../map/map";
 
 class Storage {
-  weather:WeatherInterface;
-  loactionInfo: LocationInfo;
-  myMap: {searchLocation:Function};
+  weather: WeatherInterface;
+  locationInfo: LocationInfo;
   isCelsius: boolean;
+  isDark: boolean;
   lang: string;
-  constructor () {
-  }
-  async init () {
-    this.lang = 'en';
-    this.loactionInfo = await getUserLoaction();
-    this.myMap = await initYandexMap(this.loactionInfo.location.latitude,this.loactionInfo.location.longitude);
-    this.loactionInfo = await this.myMap.searchLocation(this.loactionInfo.city);    
-    this.weather = await getWeather(this.loactionInfo.location,this.lang);
-    this.isCelsius = true;
+  async init (lang:string) {
+    this.lang = lang;
+    this.locationInfo = await getUserLocation();
+    map.init();
+    await map.createMap(ymaps,this.locationInfo.location);
+    this.locationInfo = await map.findPlace(this.locationInfo.city);
+    this.weather = await getWeather(this.locationInfo.location,this.lang);
+    this.isCelsius = localStorage.isCelsius ? JSON.parse(localStorage.isCelsius) : true;
+    this.isDark = localStorage.isDark ? JSON.parse(localStorage.isDark) : true;
   }
 }
 

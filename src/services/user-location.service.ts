@@ -1,7 +1,6 @@
 import {MAIN_API_KEYS, MAIN_API_URLS} from './common/services.constants'
-import LocationInfo from './models/services.model';
 
-export default async function getUserLoaction() {
+export default async function getUserLocation() {
   const URL = `${MAIN_API_URLS.USER_LOCATION}${MAIN_API_KEYS.USER_LOCATION}`;
   const data = await fetch(URL).then(res => res.json());
   const location = data.loc.split(',').map( (e:string) => +e);

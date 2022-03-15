@@ -13,7 +13,7 @@ class Background {
   }
   async reloadImage () {
     this.reloadImageIcon.classList.add('rotate');
-    const {mainImageUrl, lowImageUrl} = await getImageUrl(storage.loactionInfo.city);
+    const {mainImageUrl, lowImageUrl} = await getImageUrl(storage.locationInfo.city);
     const lowImage = new Image();
     const mainImage = new Image();
     lowImage.src = lowImageUrl;

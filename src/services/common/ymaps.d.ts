@@ -4,7 +4,11 @@ declare namespace ymaps {
 
   class Promise {
     public Map(element: string | any, state: MapState):Map;
-    then(onFulfilled?: Function, onRejected?: Function, onProgress?: Function, searchLocation?:Function, ctx?: any): Function;
+    then(onFulfilled?: Function, onRejected?: Function, onProgress?: Function, searchLocation?:Function, ctx?: any):{
+      location: {latitude:number, longitude:number};
+      city: string;
+      country?: string;
+    }
   }
 
   export class Map {

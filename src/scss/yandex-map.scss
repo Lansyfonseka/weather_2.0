@@ -1,28 +1,24 @@
 @import './variables.scss';
 
-.map {
+#map {
   width: 49%;
   height: 45vh;
-  #map {
-    width: 100%;
-    height: 100%;
-    border-radius: $app-base-border-radius;    
-  }
+  border-radius: $app-base-border-radius;
 }
 
 ymaps{
-  border-radius: $app-base-border-radius;   
+  border-radius: $app-base-border-radius;
 }
 
 @media screen and (max-width: $app-viewport-breakpoint-medium){
-  .map {
+  #map {
     margin-top: 20px;
     min-width: 80%;
   }
 }
 
 @media screen and (max-width: $app-viewport-breakpoint-small){
-  .map {
+  #map {
     width: 100%;
   }
 }

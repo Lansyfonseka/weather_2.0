@@ -1,6 +1,7 @@
 import getWeather from '../../services/weather.service';
 import background from '../background/background';
 import { DATA_LANGUAGES_MAP } from '../language/helpers/data-languages-map';
+import map from '../map/map';
 import spinner from '../spinner/spinner';
 import storage from '../storage/storage';
 import weather from '../weather/weather';
@@ -31,8 +32,9 @@ class Search {
     spinner.show();
     weather.unmount();
     const searchCity:string = this.searchInput.value;
-    storage.loactionInfo = await storage.myMap.searchLocation(searchCity);
-    storage.weather = await getWeather(storage.loactionInfo.location,storage.lang);
+    map.findPlace(searchCity);
+    storage.locationInfo = await map.findPlace(searchCity);
+    storage.weather = await getWeather(storage.locationInfo.location,storage.lang);
     weather.render(storage.weather,storage.lang);
     weather.init();
     background.reloadImage();
