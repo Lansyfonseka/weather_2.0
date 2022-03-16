@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "project": ["tsconfig.json"]
+  },
+  "rules": {
+    "no-param-reassign": [1],
+    "arrow-body-style": "off",
+    "import/prefer-default-export": "off",
+    "class-methods-use-this": "off",
+    "no-plusplus": "off",
+    "lines-between-class-members": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/indent": ["error", 2],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "max-len": ["error", { "code": 120 }],
+    "@typescript-eslint/dot-notation": ["error"],
+    "no-underscore-dangle": ["error", { "allow": ["_coordinates", "_data"] }],
+    "consistent-return": ["error", { "treatUndefinedAsUnspecified": false }]
+  },
+  "root": true
+}

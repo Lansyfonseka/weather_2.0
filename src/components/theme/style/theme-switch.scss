@@ -7,7 +7,9 @@
   @extend %app-base-blur-component;
   @extend %app-base-blur-component-hover;
   overflow: hidden;
-  &::before, &::after {
+
+  &::before,
+  &::after {
     content: '';
     position: absolute;
     display: block;
@@ -20,6 +22,7 @@
     background-repeat: no-repeat;
     transition: $app-base-animation;
   }
+
   &::after {
     top: 100%;
     background-image: url('../../../assets/icons/theme_light.svg');
@@ -30,6 +33,7 @@
   &::before {
     top: 100%;
   }
+
   &::after {
     top: 0;
   }

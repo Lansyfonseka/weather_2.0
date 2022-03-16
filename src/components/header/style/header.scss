@@ -11,14 +11,15 @@
     min-width: 300px;
     max-width: 350px;
     font-style: italic;
-  }  
+  }
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-small){
+@media screen and (max-width: $app-viewport-breakpoint-small) {
   .header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .switchers {
       width: 80%;
       max-width: none;

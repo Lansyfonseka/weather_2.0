@@ -2,22 +2,22 @@ import storage from '../storage/storage';
 import './style/theme-switch.scss';
 
 class ThemeSwitch {
-  button:HTMLElement;
-  app:HTMLElement;
-  constructor () {
+  button: HTMLElement;
+  app: HTMLElement;
+  constructor() {
     this.changeTheme = this.changeTheme.bind(this);
   }
-  init () {
+  init() {
     this.button = document.querySelector('.theme__switch');
     this.app = document.querySelector('.app');
-    this.button.addEventListener('click',this.changeTheme);
-    
+    this.button.addEventListener('click', this.changeTheme);
+
     if (storage.isDark) {
       this.button.classList.toggle('active');
       this.app.classList.toggle('dark');
     }
   }
-  changeTheme () {    
+  changeTheme() {
     this.button.classList.toggle('active');
     this.app.classList.toggle('dark');
     storage.isDark = !storage.isDark;
@@ -25,4 +25,4 @@ class ThemeSwitch {
   }
 }
 
-export default new ThemeSwitch()
+export default new ThemeSwitch();

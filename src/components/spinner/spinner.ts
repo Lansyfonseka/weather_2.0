@@ -1,13 +1,13 @@
-import './style/spinner.scss'
+import './style/spinner.scss';
 
 class Spinner {
-  body:HTMLElement;
-  constructor (){
+  body: HTMLElement;
+  constructor() {
     this.body = document.createElement('div');
     this.body.classList.add('spinner');
     const water = document.createElement('div');
     water.classList.add('water');
-    this.body.appendChild(water)
+    this.body.appendChild(water);
   }
   show() {
     this.body.style.display = 'flex';

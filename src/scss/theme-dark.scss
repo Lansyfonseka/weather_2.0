@@ -1,34 +1,49 @@
 @import './variables.scss';
 
- body .dark{
-  .reload-image, .language-select__header, .language-select__body, .search__input, .search__button,
-  .temperature__switch button, .item-card__front-side, .item-card__back-side, .theme__switch {
+body .dark {
+  .reload-image,
+  .language-select__header,
+  .language-select__body,
+  .search__input,
+  .search__button,
+  .temperature__switch button,
+  .item-card__front-side,
+  .item-card__back-side,
+  .theme__switch {
     @extend %app-base-blur-component-dark;
     @extend %app-base-blur-component-hover-dark;
   }
+
   .weather__today {
     @extend %app-base-blur-component-dark;
   }
-  .language-select__header::after, .reload-image__icon, .arrow::after, .search__microphone::after, .theme__switch::after {
+
+  .language-select__header::after,
+  .reload-image__icon,
+  .arrow::after,
+  .search__microphone::after,
+  .theme__switch::after {
     filter: invert(1);
   }
+
   .weather__daily .item-card__front-side .weather__daily_temperature .temperature-night {
     color: #ffffff8a;
   }
 
-  .search__microphone {    
+  .search__microphone {
     @extend %app-base-blur-component-hover-dark;
   }
 
   .weather__daily .item-card__back-side {
     pointer-events: none;
+
     .bottom-dots {
-      border-color: #ffffff;
+      border-color: #fff;
     }
   }
 
   .weather__today_detail div .circle .circle__value {
-    fill: #ffffff;
+    fill: #fff;
   }
 
   .spinner {

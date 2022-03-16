@@ -4,8 +4,9 @@
   position: relative;
   display: flex;
 
-  &__input, &__button{
-    padding: 0 $app-base-margin-padding; 
+  &__input,
+  &__button {
+    padding: 0 $app-base-margin-padding;
     height: 40px;
     font-size: $app-font-size-small;
     font-style: $app-font-style-italic;
@@ -23,10 +24,12 @@
 
   &__button {
     border-radius: 0 $app-base-border-radius $app-base-border-radius 0;
+
     &:hover {
       background-color: $app-base-background-color-hover;
     }
   }
+
   &__microphone {
     position: absolute;
     left: 55%;
@@ -36,12 +39,13 @@
     z-index: 1;
     transition: $app-base-animation;
     @extend %app-base-blur-component-hover;
+
     &::after {
       content: '';
       display: block;
       width: 100%;
       height: 100%;
-      background-image: url(../../../assets/icons/microphone.svg);
+      background-image: url('../../../assets/icons/microphone.svg');
       background-size: 80%;
       background-repeat: no-repeat;
       background-position: center;
@@ -49,9 +53,10 @@
   }
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-small){
+@media screen and (max-width: $app-viewport-breakpoint-small) {
   .search {
     margin-top: 20px;
+
     &__input {
       width: 80vw;
     }

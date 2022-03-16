@@ -3,40 +3,50 @@
 .weather {
   width: 49%;
   font-style: $app-font-style-italic;
+
   &__today {
     padding-top: $app-base-margin-padding;
     text-align: center;
     @extend %app-base-blur-component;
     cursor: default;
+
     &_city {
       font-size: $app-font-size-large;
     }
+
     &_country {
       font-size: $app-font-size-medium;
     }
+
     &_day {
       margin-top: 20px;
-      font-size: $app-font-size-medium;;
+      font-size: $app-font-size-medium;
     }
+
     &_description {
-      font-size: $app-font-size-small;;
+      font-size: $app-font-size-small;
     }
+
     &_temperature {
       display: flex;
       justify-content: center;
       align-items: center;
+
       span {
         font-size: 60px;
       }
+
       img {
         width: 128px;
       }
     }
+
     .arrow {
       width: 100%;
-      height: 40px;      
+      height: 40px;
       transition: $app-base-animation;
       border-radius: 0 0 $app-base-border-radius $app-base-border-radius;
+
       &::after {
         content: '';
         display: block;
@@ -46,13 +56,15 @@
         background-image: url('../../../assets/icons/arrow.svg');
         background-size: 100%;
       }
+
       &:hover {
         transform: translateY(10px);
       }
     }
+
     &_detail {
       opacity: 0;
-      height: 0px;
+      height: 0;
       overflow: hidden;
       margin: 0 20px;
       display: grid;
@@ -60,28 +72,34 @@
       grid-template-columns: 1fr 1fr;
       gap: 5px;
       transition: $app-base-animation;
+
       div {
         width: 100%;
         border-radius: 10px;
         transition: $app-base-animation;
         box-shadow: $app-base-box-shadow-low;
+
         .parameter-title {
           margin: 10px 0;
           font-size: $app-font-size-medium;
         }
+
         .parameter-value {
           font-size: $app-font-size-medium;
         }
+
         .circle {
           display: block;
           margin: auto;
           width: 100px;
           height: 100px;
+
           .circle__background {
             fill: none;
             stroke: #00000017;
             stroke-width: 2.5;
           }
+
           .circle__fill {
             stroke: #56a0ee;
             fill: none;
@@ -94,35 +112,39 @@
               }
             }
           }
+
           .circle__value {
             font-size: 10px;
           }
         }
+
         &:hover {
-          box-shadow: 4px 4px 20px 0px #000000ab;;
+          box-shadow: 4px 4px 20px 0 #000000ab;
         }
       }
     }
   }
+
   .full-description {
     .weather__today_detail {
       opacity: 1;
       overflow: visible;
       height: 310px;
     }
+
     .arrow::after {
       transform: rotate(180deg);
     }
-  }  
+  }
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-medium){
+@media screen and (max-width: $app-viewport-breakpoint-medium) {
   .weather {
     min-width: 80%;
   }
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-small){
+@media screen and (max-width: $app-viewport-breakpoint-small) {
   .weather {
     width: 100%;
   }

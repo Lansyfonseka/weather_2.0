@@ -1,22 +1,21 @@
-import './style/header.scss'
+import './style/header.scss';
 
-import '../search/search'
-import background from '../background/background'
-import language from '../language/language'
-import temperature from '../temperature/temperature'
-import themeSwitch from '../theme/theme-switch'
-import search from '../search/search'
-import { DATA_LANGUAGES_MAP } from '../language/helpers/data-languages-map'
+import background from '../background/background';
+import language from '../language/language';
+import temperature from '../temperature/temperature';
+import themeSwitch from '../theme/theme-switch';
+import search from '../search/search';
+import { DATA_LANGUAGES_MAP } from '../language/helpers/data-languages-map';
 
 class Header {
-  init () {
+  init() {
     background.init();
     language.init();
     temperature.init();
     themeSwitch.init();
     search.init();
   }
-  render (lang:string) {
+  render(lang: string) {
     const header = document.createElement('header');
     header.classList.add('header');
     header.innerHTML = `<section class="switchers">
@@ -44,9 +43,9 @@ class Header {
     <input type="text" class="search__input" placeholder="${DATA_LANGUAGES_MAP.other.searchCity[lang]}">
     <button class="search__microphone"></button>
     <button class="search__button">${DATA_LANGUAGES_MAP.other.search[lang]}</button>
-  </section>`
+  </section>`;
     return header;
   }
 }
 
-export default new Header()
+export default new Header();

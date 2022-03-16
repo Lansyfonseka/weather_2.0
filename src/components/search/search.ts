@@ -10,32 +10,31 @@ import './style/search.scss';
 class Search {
   searchInput: HTMLInputElement;
   searchButton: HTMLElement;
-  constructor () {
-    this.search = this.search.bind(this)
+  constructor() {
+    this.search = this.search.bind(this);
   }
-  init () {
+  init() {
     this.searchInput = document.querySelector('.search__input');
     this.searchButton = document.querySelector('.search__button');
 
-    this.searchButton.addEventListener('click',this.search);
-    window.addEventListener('keydown',(event) => {
+    this.searchButton.addEventListener('click', this.search);
+    window.addEventListener('keydown', (event) => {
       const keyCodeEnter = 'Enter';
-      if (!event.repeat && event.key === keyCodeEnter)
-        this.search();
-    })
+      if (!event.repeat && event.key === keyCodeEnter) this.search();
+    });
   }
-  changeLang(lang:string) {
+  changeLang(lang: string) {
     this.searchInput.placeholder = DATA_LANGUAGES_MAP.other.searchCity[lang];
     this.searchButton.innerHTML = DATA_LANGUAGES_MAP.other.search[lang];
   }
-  async search () {
+  async search() {
     spinner.show();
     weather.unmount();
-    const searchCity:string = this.searchInput.value;
+    const searchCity: string = this.searchInput.value;
     map.findPlace(searchCity);
     storage.locationInfo = await map.findPlace(searchCity);
-    storage.weather = await getWeather(storage.locationInfo.location,storage.lang);
-    weather.render(storage.weather,storage.lang);
+    storage.weather = await getWeather(storage.locationInfo.location, storage.lang);
+    weather.render(storage.weather, storage.lang);
     weather.init();
     background.reloadImage();
     spinner.hide();

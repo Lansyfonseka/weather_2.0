@@ -4,17 +4,16 @@ import weather from '../weather/weather';
 import './style/temperature.scss';
 
 class Temperature {
-  init () {
+  init() {
     const buttonContainer = document.querySelector('.temperature__switch');
     const celsius = buttonContainer.firstElementChild;
     const fahrenheit = celsius.nextElementSibling;
     const activeClass = 'active';
-    
-    if (storage.isCelsius)
-      celsius.classList.add(activeClass) 
+
+    if (storage.isCelsius) celsius.classList.add(activeClass);
     else fahrenheit.classList.add(activeClass);
 
-    buttonContainer.addEventListener('click', (event:Event) => {
+    buttonContainer.addEventListener('click', (event: Event) => {
       const target = event.target as HTMLElement;
       if (target.tagName === 'BUTTON') {
         const activeButton = buttonContainer.querySelector(`.${activeClass}`);
@@ -24,15 +23,15 @@ class Temperature {
       }
     });
   }
-  changeTemperature () {
+  changeTemperature() {
     spinner.show();
     storage.isCelsius = !storage.isCelsius;
     localStorage.isCelsius = storage.isCelsius;
     weather.unmount();
-    weather.render(storage.weather,storage.lang);
+    weather.render(storage.weather, storage.lang);
     weather.init();
-    spinner.hide()
+    spinner.hide();
   }
 }
 
-export default new Temperature;
+export default new Temperature();

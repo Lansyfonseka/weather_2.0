@@ -5,7 +5,7 @@
 @import './theme-dark.scss';
 
 body {
-  background: url(https://images.pexels.com/photos/1424337/pexels-photo-1424337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background: url('https://images.pexels.com/photos/1424337/pexels-photo-1424337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-position: center;
   background-size: cover;
   transition: $app-base-animation;
@@ -17,6 +17,7 @@ body {
   max-width: 1200px;
   margin: 20px auto;
   font-family: $app-font-family;
+
   .main {
     margin-top: 10px;
     display: flex;
@@ -24,25 +25,29 @@ body {
   }
 }
 
-.app[data-lang="ru"] {
+.app[data-lang='ru'] {
   font-family: $app-font-family-ru;
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-medium){
+@media screen and (max-width: $app-viewport-breakpoint-medium) {
   .main {
     flex-direction: column;
     align-items: center;
-    .weather, .map {
+
+    .weather,
+    .map {
       min-width: 80%;
     }
   }
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-small){
-  html, body {
+@media screen and (max-width: $app-viewport-breakpoint-small) {
+  html,
+  body {
     font-size: 12px;
   }
+
   .app {
-    width: 95%;    
+    width: 95%;
   }
 }

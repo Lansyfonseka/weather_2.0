@@ -1,4 +1,4 @@
-import header from '../header/header'
+import header from '../header/header';
 import weather from '../weather/weather';
 import storage from '../storage/storage';
 import spinner from '../spinner/spinner';
@@ -6,7 +6,7 @@ import { MAIN_API_KEYS, MAIN_API_URLS } from '../../services/common/services.con
 
 class App {
   entryPoint: HTMLElement;
-  constructor () {
+  constructor() {
     this.entryPoint = document.querySelector('.app');
   }
   async init() {
@@ -29,10 +29,10 @@ class App {
       this.entryPoint.prepend(header.render(storage.lang));
       header.init();
       mainContainer.prepend(weather.body);
-      weather.render(storage.weather,storage.lang)
+      weather.render(storage.weather, storage.lang);
       weather.init();
       spinner.hide();
-    }
+    };
   }
 }
 

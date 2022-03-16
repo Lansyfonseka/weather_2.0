@@ -1,36 +1,36 @@
-//Fonts
-$app-font-family: 'Prometo';  //Only english
+// Fonts
+$app-font-family: 'Prometo'; // Only english
 $app-font-style-italic: italic;
 $app-font-style-normal: normal;
 $app-font-family-ru: cursive;
 
-//Font sizes
+// Font sizes
 $app-font-size-large: 3rem;
 $app-font-size-medium: 2rem;
 $app-font-size-small: 1.2rem;
 $app-font-size-default: 1rem;
 
-//Border
+// Border
 $app-base-border-radius: 10px;
 
-//Margin and padding
+// Margin and padding
 $app-base-margin-padding: 10px;
 
-//Color
+// Color
 $app-base-background-color: #ffffff30;
 $app-base-background-color-hover: #ffffff70;
 
-//Filter
+// Filter
 $app-base-filter: blur(2px) contrast(0.8);
 
-//Shadow
+// Shadow
 $app-base-box-shadow-normal: 4px 4px 10px 3px #00000061;
-$app-base-box-shadow-low: 4px 4px 10px 0px #00000061;
+$app-base-box-shadow-low: 4px 4px 10px 0 #00000061;
 
-//Animation
+// Animation
 $app-base-animation: 200ms ease-in-out;
 
-//Viewport breakpoint
+// Viewport breakpoint
 $app-viewport-breakpoint-large: 1024px;
 $app-viewport-breakpoint-medium: 920px;
 $app-viewport-breakpoint-small: 620px;
@@ -40,8 +40,8 @@ $app-viewport-breakpoint-small: 620px;
   backdrop-filter: $app-base-filter;
   -webkit-backdrop-filter: $app-base-filter;
   border-radius: $app-base-border-radius;
-  transition: $app-base-animation;  
-  color: #000000;
+  transition: $app-base-animation;
+  color: #000;
 }
 
 %app-base-blur-component-hover {
@@ -53,11 +53,12 @@ $app-viewport-breakpoint-small: 620px;
 %app-base-blur-component-dark {
   $app-base-background-color: #1e1e1e9c;
   background-color: $app-base-background-color;
-  color: #ffffff;
+  color: #fff;
 }
 
 %app-base-blur-component-hover-dark {
   $app-base-background-color-hover: #000000ad;
+
   &:hover {
     background-color: $app-base-background-color-hover;
   }

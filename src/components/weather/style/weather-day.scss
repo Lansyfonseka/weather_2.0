@@ -5,6 +5,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5px;
+
   .item-card {
     position: relative;
     transition: $app-base-animation;
@@ -24,14 +25,17 @@
       -webkit-backface-visibility: hidden;
       transition: $app-base-animation;
       cursor: default;
+
       .weather__daily_temperature {
         font-size: $app-font-size-medium;
+
         .temperature-night {
-          color: #00000088;
+          color: #0008;
           font-size: $app-font-size-small;
         }
       }
     }
+
     &__back-side {
       position: absolute;
       right: 0;
@@ -51,19 +55,22 @@
       -webkit-backface-visibility: hidden;
       box-shadow: $app-base-box-shadow-normal;
       transition: $app-base-animation;
+
       &_line {
         display: flex;
         justify-content: space-between;
+
         .bottom-dots {
           width: 100%;
-          border-bottom: 2px dotted #000000;
+          border-bottom: 2px dotted #000;
         }
+
         span {
           white-space: nowrap;
         }
       }
-
     }
+
     .icon-clear-day {
       background-image: url('../../../assets/icons/weather_icon/clear-day.svg');
     }
@@ -115,12 +122,15 @@
     .weather__daily_day {
       font-size: $app-font-size-medium;
     }
+
     &:hover {
       // transform: scale(1.2);
       z-index: 5;
+
       .item-card__front-side {
         transform: rotateY(180deg);
       }
+
       .item-card__back-side {
         transform: rotateY(0deg);
       }
@@ -128,13 +138,13 @@
   }
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-large){
+@media screen and (max-width: $app-viewport-breakpoint-large) {
   .weather__daily .item-card__back-side {
     font-size: $app-font-size-default;
   }
 }
 
-@media screen and (max-width: $app-viewport-breakpoint-small){
+@media screen and (max-width: $app-viewport-breakpoint-small) {
   .weather__daily .item-card__front-side {
     height: 150px;
   }

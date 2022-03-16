@@ -5,15 +5,15 @@ import './style/background.scss';
 class Background {
   reloadImageButton: HTMLElement;
   reloadImageIcon: HTMLElement;
-  init () {
+  init() {
     this.reloadImageButton = document.querySelector('.reload-image');
     this.reloadImageIcon = this.reloadImageButton.querySelector('.reload-image__icon');
     this.reloadImage = this.reloadImage.bind(this);
-    this.reloadImageButton.addEventListener('click',this.reloadImage);
+    this.reloadImageButton.addEventListener('click', this.reloadImage);
   }
-  async reloadImage () {
+  async reloadImage() {
     this.reloadImageIcon.classList.add('rotate');
-    const {mainImageUrl, lowImageUrl} = await getImageUrl(storage.locationInfo.city);
+    const { mainImageUrl, lowImageUrl } = await getImageUrl(storage.locationInfo.city);
     const lowImage = new Image();
     const mainImage = new Image();
     lowImage.src = lowImageUrl;
@@ -23,9 +23,9 @@ class Background {
       mainImage.onload = () => {
         document.body.style.backgroundImage = `url('${mainImageUrl}')`;
         this.reloadImageIcon.classList.remove('rotate');
-      }
-    }
+      };
+    };
   }
 }
 
-export default new Background;
+export default new Background();
